@@ -30,8 +30,8 @@ export default {
         addTodo() {
             if (this.newTodoItem !== "") {
                 var value = this.newTodoItem && this.newTodoItem.trim();
+                this.$emit('addTodo', value);
                 localStorage.setItem(value, value);
-                this.propsdata.push(value);
                 this.clearInput();
             } else {
                 this.showModal = !this.showModal;
